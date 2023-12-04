@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  transitconsole:
+    image: transit/console:latest
+    ports:
+      - 8080:8080
+    environment:
+      - TRANSIT_CONSOLE_PORT=8080
+
+  transitbroker:
+    image: transit/broker:latest
+    volumes:
+      - transit_data:/transit_data
+    ports:
+      - 8081:8081
+    environment:
+      - TRANSIT_BROKER_STORAGE=local
+      - TRANSIT_BROKER_BUCKET=/transit_data
+      - TRANSIT_BROKER_PORT=8081
+      - TRANSIT_BROKER_LOG_LEVEL=debug
+
+volumes:
+  transit_data: {}

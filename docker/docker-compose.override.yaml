@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  transitbroker:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      target: run-transitbroker
+
+  transitconsole:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      target: run-transitconsole

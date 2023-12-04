@@ -1,2 +1,9 @@
-zig-cache
-zig-out
+.coverage
+.ruff_cache
+.venv
+__pycache__/
+*.egg-info/
+pkgs/**/*.spec
+pkgs/**/build/
+pkgs/**/dist/
+llama.log

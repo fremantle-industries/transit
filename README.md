@@ -2,6 +2,80 @@
 
 A bytes first implementation of the Kafka API within an S3 keyspace
 
+## Start Nix Devshell
+
+```bash
+> nix develop -c $SHELL
+```
+
+## Install Dependencies
+
+```bash
+> make deps/install
+```
+
+## Freeze Dependencies
+
+```bash
+> make deps/freeze
+```
+
+## Run
+
+```bash
+> make run/transitbroker
+> make run/transitctl
+```
+
+## Format
+
+```bash
+> make format
+```
+
+## Lint
+
+```bash
+> make lint
+```
+
+## Test
+
+```bash
+> make test/transitbroker
+> make test/transitclient
+> make test/transitctl
+```
+
+## Coverage
+
+```bash
+> make coverage/transitbroker
+> make coverage/transitclient
+> make coverage/transitctl
+```
+
+## Build
+
+```bash
+> make build/sprout
+> make build/sproutctl
+```
+
+## Execute
+
+```bash
+> make exec/sprout -- start
+> make exec/sproutctl
+```
+
+## Clean
+
+```bash
+> make clean/sprout
+> make clean/sproutctl
+```
+
 ## Storage Keyspace
 
 - Max key size 1024 bytes [S3 limit](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html)
